@@ -1,0 +1,67 @@
+{% extends "rozklad/base.html" %}
+
+{% block zagolovok%}rozklad edit{% endblock zagolovok %}
+
+{% block rez%}
+
+<form action="" method="Post">
+	{% csrf_token %}
+ 	<table>
+    {{ form.as_table }}
+    </table>
+
+  <input type="submit" value="Submit">
+</form> 
+<br>
+<table id="customers">
+	<tr>
+    <th>День тижня</th>
+    <th>Номер урока</th>
+    <th>Назва урока</th>
+  </tr>
+  {% for doc in doc_list %}
+      <tr><td>{{ doc.idweek }}</td><td>{{ doc.nlesson }}</td><td>{{ doc.idlessons }}</td></tr>
+  {% endfor %}
+</table>
+
+<br><br><br><br>
+<form action="" method="Post">
+  {% csrf_token %}
+  <table>
+    {{ form_2.as_table }}
+    </table>
+
+  <input type="submit" value="Submit">
+</form> 
+<br>
+<table id="customers">
+  <tr>
+    <th>Назва події</th>
+    <th>Початок події</th>
+    <th>Кінець події</th>
+  </tr>
+  {% for doc in doc_list_2 %}
+      <tr><td>{{ doc.podiya }}</td><td>{{ doc.time_start }}</td><td>{{ doc.time_end }}</td></tr>
+  {% endfor %}
+</table>
+
+<br><br><br><br>
+<form action="" method="Post">
+  {% csrf_token %}
+  <table>
+    {{ form_3.as_table }}
+    </table>
+
+  <input type="submit" value="Submit">
+</form> 
+<br>
+<table id="customers">
+  <tr>
+    <th>Початок уроку</th>
+    <th>Кінець уроку</th>
+  </tr>
+  {% for doc in doc_list_3 %}
+      <tr><td>{{ doc.time_start }}</td><td>{{ doc.time_end }}</td></tr>
+  {% endfor %}
+</table>
+{% endblock rez %}

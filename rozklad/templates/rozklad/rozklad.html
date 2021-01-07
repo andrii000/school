@@ -1,0 +1,39 @@
+{% extends "rozklad/base.html" %}
+
+{% block zagolovok%}rozklad{% endblock zagolovok %}
+
+{% block rez%}
+
+<table id="customers">
+  <tr>
+    <th>№</th>
+    <th>Час</th>
+    <th>Назва урока</th>
+  </tr>
+  {% for doc in uroki_list %}
+      <tr><td>{{ doc.nlesson }}</td><td>{{ doc.nlesson }}</td><td>{{ doc.idlessons }}</td></tr>
+  {% endfor %}
+</table>
+
+<table id="customers">
+  <tr>
+    <th>start</th>
+  </tr>
+  {% for doc in rez_list %}
+  <tr><td>{{ rez_list }}</td></tr>
+  {% endfor %}
+</table>
+
+<table>
+	<script>
+		var tab = "<tr><td>";
+		{% for doc in uroki_list %}
+			tab += doc.idlessons;
+			tab += "</td>"
+		{% endfor %}
+		tab += "</tr>"
+		document.write(tab)
+	</script>
+</table>
+
+{% endblock rez %}
