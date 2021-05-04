@@ -14,4 +14,8 @@ db.sqlite3
 # Static folder at project root
 /static/
 
+start.txt
 
+rozklad_prj.sublime-workspace
+
+rozklad_prj.sublime-project

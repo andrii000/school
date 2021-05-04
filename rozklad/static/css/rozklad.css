@@ -1,21 +1,31 @@
 .menu {
-  position: absolute;
-  top: 10%;
+  position: fixed;
+  top: 5%;
   left: 0;
-  width: 20%;
+  width: 10%;
   /*height: 100%;*/
   bottom: 0;
-  border: 3px solid #73AD21;
+  /*border: 3px solid #73AD21;*/
   /*padding-right: 50px;*/
+  font-size: 150%;
+  color: gold;
+  background-color: #e5e5e5;
+  z-index: 9;
 }
 
 .zagolovok {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 10%;
-  border: 3px solid #73AD21;
+  height: 5%;
+  /*border: 3px solid #73AD21;*/
+  background-color: #e5e5e5;
+
+  text-align: center;
+  font-size: 60%;
+  /*font-weight: bold;*/
+  z-index: 9;
 }
 
 .result {
@@ -23,33 +33,116 @@
   top: 10%;
   /*bottom: 0;*/
   right: 0;
-  left: 20%;
+  left: 10%;
   /*width: 80%;*/
   /*height: 85%;*/
-  border: 3px solid #73AD21;
+  /*border: 3px solid #73AD21;*/
   padding-left: 40px;
   padding-top: 40px;
 }
 
-#customers {
+.author {
+  position: fixed;
+  bottom: 0;
+  left: 2%;
+  color: grey;
+  font-style: italic;
+  /*border: 3px solid #73AD21;*/
+  z-index: 9;
+}
+
+#tab {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  height: 100%;
+  font-size: 130%;
+  text-align: center;
 }
 
-#customers td, #customers th {
+#tab td, #tab th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+#tab tr:nth-child(even){background-color: #f2f2f2;}
 
-#customers tr:hover {background-color: #ddd;}
+#tab tr:hover {background-color: #ddd;}
 
-#customers th {
+#tab th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
+  /*text-align: left;*/
+  background-color: grey;
   color: white;
+}
+
+#lesson_name {
+  font-size: 200%;
+  width: 50%;
+  font-weight: bold;
+}
+
+#now_lesson td {
+  font-weight: bold;
+  background-color: gold;
+  /*font-size: 200%;*/
+}
+
+.ends_in {
+  font-size: 50%;
+}
+
+#week_day {
+  text-align: center;
+  /*color: #36404a;*/
+  font-family: inherit;
+}
+
+#all_rozklad_week_day {
+  text-align: center;
+  font-family: inherit;
+}
+
+#all_rozkald_but {
+  font-size: 200%;
+
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  width: 50%;
+  font-weight: bold;
+}
+
+#menu_but {
+  /*font-size: 200%;*/
+
+  padding: 16px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  background-color: white;
+  color: black;
+  /*border: 2px solid #e7e7e7;*/
+  border: none;
+
+  width: 100%;
+  font-weight: bold;
+}
+
+#menu_but:hover {
+  background-color: #e7e7e7;
 }

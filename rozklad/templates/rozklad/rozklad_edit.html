@@ -4,7 +4,7 @@
 
 {% block rez%}
 
-<form action="" method="Post">
+<!-- <form action="" method="Post">
 	{% csrf_token %}
  	<table>
     {{ form.as_table }}
@@ -13,14 +13,14 @@
   <input type="submit" value="Submit">
 </form> 
 <br>
-<table id="customers">
+<table id="tab">
 	<tr>
     <th>День тижня</th>
     <th>Номер урока</th>
     <th>Назва урока</th>
   </tr>
   {% for doc in doc_list %}
-      <tr><td>{{ doc.idweek }}</td><td>{{ doc.nlesson }}</td><td>{{ doc.idlessons }}</td></tr>
+      <tr><td>{{ doc.idweek }}</td><td>{{ doc.nomer }}</td><td>{{ doc.idlessons }}</td></tr>
   {% endfor %}
 </table>
 
@@ -34,7 +34,7 @@
   <input type="submit" value="Submit">
 </form> 
 <br>
-<table id="customers">
+<table id="tab">
   <tr>
     <th>Назва події</th>
     <th>Початок події</th>
@@ -55,7 +55,7 @@
   <input type="submit" value="Submit">
 </form> 
 <br>
-<table id="customers">
+<table id="tab">
   <tr>
     <th>Початок уроку</th>
     <th>Кінець уроку</th>
@@ -63,5 +63,7 @@
   {% for doc in doc_list_3 %}
       <tr><td>{{ doc.time_start }}</td><td>{{ doc.time_end }}</td></tr>
   {% endfor %}
-</table>
+</table> -->
+
+:(
 {% endblock rez %}

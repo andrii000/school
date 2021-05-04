@@ -1,39 +1,74 @@
 {% extends "rozklad/base.html" %}
 
+
 {% block zagolovok%}rozklad{% endblock zagolovok %}
 
 {% block rez%}
 
-<table id="customers">
-  <tr>
-    <th>№</th>
-    <th>Час</th>
-    <th>Назва урока</th>
-  </tr>
-  {% for doc in uroki_list %}
-      <tr><td>{{ doc.nlesson }}</td><td>{{ doc.nlesson }}</td><td>{{ doc.idlessons }}</td></tr>
-  {% endfor %}
-</table>
+<div>
+  <h1 id="week_day">{{ week_day }}</h1>
 
-<table id="customers">
-  <tr>
-    <th>start</th>
-  </tr>
-  {% for doc in rez_list %}
-  <tr><td>{{ rez_list }}</td></tr>
-  {% endfor %}
-</table>
+  <table id="tab">
+    <tr>
+      <th>№</th>
+      <th>Початок</th>
+      <th>Кінець</th>
+      <th id="lesson_name">Назва урока</th>
+      <th>Повториться</th><th>Вчитель</th><th>Каб.</th>
+    </tr>
+    {% for doc in tab_list_before %}
+      <tr>
+        <td>{{ doc.l_number }}</td>
+        <td>{{ doc.time_start }}</td>
+        <td>{{ doc.time_end }}</td>
+        <td id="lesson_name">{{ doc.l_name }}</td>
+        <td>{{ doc.l_date }}</td>
+        <td>{{ doc.teacher_name }}</td>
+        <td>{{ doc.classroom_name }}</td>
+      </tr>
+    {% endfor %}
 
-<table>
-	<script>
-		var tab = "<tr><td>";
-		{% for doc in uroki_list %}
-			tab += doc.idlessons;
-			tab += "</td>"
-		{% endfor %}
-		tab += "</tr>"
-		document.write(tab)
-	</script>
-</table>
+    {% for doc in tab_list_now %}
+      <tr id="now_lesson">
+        <td>{{ doc.l_number }}</td>
+        <td>{{ doc.time_start }}</td>
+        <td>{{ doc.time_end }}</td>
+
+        <td id="lesson_name">{{ doc.l_name }} 
+        <div class="ends_in">{{ doc.ends_in }}</div>
+        </td>
+
+        <td>{{ doc.l_date }}</td>
+        <td>{{ doc.teacher_name }}</td>
+        <td>{{ doc.classroom_name }}</td>
+      </tr>
+    {% endfor %}
+
+    {% for doc in tab_list_after %}
+      <tr>
+        <td>{{ doc.l_number }}</td>
+        <td>{{ doc.time_start }}</td>
+        <td>{{ doc.time_end }}</td>
+        <td id="lesson_name">{{ doc.l_name }}</td>
+        <td>{{ doc.l_date }}</td>
+        <td>{{ doc.teacher_name }}</td>
+        <td>{{ doc.classroom_name }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <br><br><br><br>
+
+  <div style="display: flex; justify-content: center;">
+  <button id="all_rozkald_but" onclick="window.location.href='all';">Весь розклад</button>
+  </div>
+</div>
+
+
+
+
+
+
+
 
 {% endblock rez %}

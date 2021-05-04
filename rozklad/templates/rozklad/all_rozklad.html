@@ -1,0 +1,52 @@
+{% extends "rozklad/base.html" %}
+
+
+{% block zagolovok%}all rozklad{% endblock zagolovok %}
+
+{% block rez%}
+
+<div>
+
+  {% for tab in tabs %}
+    <div>
+      {% for doc in tab %}
+        <script type="text/javascript">
+          var name = "{{ doc.day }}";
+          var num = "{{ doc.l_number }}";
+          if(num == 1){
+            document.write("<h1 id='all_rozklad_week_day'>" + name + "</h1>");
+          }
+        </script>
+      {% endfor %}
+      <table id="tab">
+        <tr>
+          <th>№</th>
+          <th id="lesson_name">Назва урока</th>
+          <th>Вчитель</th>
+          <th>Каб.</th>
+        </tr>
+        {% for doc in tab %}
+          <tr>
+            <td>{{ doc.l_number }}</td>
+            <td id="lesson_name">{{ doc.l_name }}</td>
+            <td>{{ doc.teacher_name }}</td>
+            <td>{{ doc.classroom_name }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <br>
+  {% endfor %}
+
+
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock rez %}

@@ -11,15 +11,24 @@
     <h1>{% block zagolovok%}{% endblock zagolovok %}</h1>
   </div>
   <div class="menu">
-    <ul>
+<!--     <ul>
       <li><a href="/rozklad" >ROZKLAD</a></li>
-      <li><a href="/rozklad/edit" >ROZKLAD_EDIT</a></li>
+      <li><a href="/rozklad/all" >ALL ROZKLAD</a></li>
+      <li><a href="/rozklad/edit" >ROZKLAD EDIT</a></li>
       <br><br>
       <li><a href="/admin" >admin</a></li>
-    </ul>
+    </ul> -->
+
+    <button id="menu_but" onclick="window.location.href='/rozklad';">Розклад</button>
+    <button id="menu_but" onclick="window.location.href='/rozklad/all';">Весь розклад</button>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <button id="menu_but" onclick="window.location.href='/admin';">Адміністрування</button>
   </div>
   <div class="result">
     {% block rez%}{% endblock rez %}
+  </div>
+  <div class="author">
+    <h4>Andrii Valyukh</h4>
   </div>
 </body>
 </html>
